@@ -1,0 +1,83 @@
+/* Contact section shell (blobs, grid, copy, perks) -------- */
+.contact { padding: clamp(80px, 10vw, 140px) 0; position: relative; overflow: visible; isolation: isolate }
+.contact-blobs { position: absolute; top: -120px; right: 0; bottom: -120px; left: 0; z-index: 0; pointer-events: none }
+.contact-blobs .cb {
+  position: absolute; border-radius: 50%;
+  filter: blur(40px); opacity: .45;
+}
+.contact-blobs .cb1 {
+  top: -10%; left: -8%; width: 46%; aspect-ratio: 1 / 1;
+  background: radial-gradient(circle, #F0ABFC, #C084FC 60%, transparent 80%);
+  animation: morphA 10s ease-in-out infinite;
+}
+.contact-blobs .cb2 {
+  bottom: -14%; right: -10%; width: 50%; aspect-ratio: 1 / 1;
+  background: radial-gradient(circle, #8B5CF6, #F472B6 50%, transparent 80%);
+  animation: morphB 12s ease-in-out infinite;
+  opacity: .35;
+}
+.contact-grid {
+  position: relative; z-index: 1;
+  display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 48px; align-items: center;
+}
+.contact-copy h2 { margin-bottom: 14px }
+.contact-copy p.lede { margin-bottom: 22px; font-size: 18px }
+.contact-perks { display: grid; gap: 10px; margin-bottom: 22px; list-style: none; padding: 0 }
+.contact-perks li { display: flex; align-items: center; gap: 10px; font-weight: 600; color: var(--ink); font-size: 15px }
+.contact-perks .check { width: 24px; height: 24px; border-radius: 50%; background: rgba(20, 184, 166, .18); color: var(--teal); display: grid; place-items: center }
+.contact-perks .check svg { width: 13px; height: 13px }
+
+@media (max-width: 880px) {
+  .contact-grid { grid-template-columns: 1fr; gap: 32px }
+}
+
+/* Form ------------------------------------------------------ */
+.contact-form {
+  padding: 34px;
+  display: grid; gap: 14px;
+  background: rgba(255, 255, 255, .55);
+  -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, .7);
+  border-radius: var(--radius-card);
+  box-shadow: var(--glass-shadow-hi);
+}
+.field { display: flex; flex-direction: column; gap: 6px }
+.field label { font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted) }
+.field input, .field select {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(28, 27, 34, .12);
+  background: rgba(255, 255, 255, .7);
+  font-size: 15px; color: var(--ink);
+  transition: border-color var(--t-fast), box-shadow var(--t-fast), background var(--t-fast);
+}
+.field select {
+  appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1.5l5 5 5-5" stroke="%231C1B22" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 42px;
+}
+.field input:focus, .field select:focus {
+  outline: none; border-color: var(--violet);
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(139, 92, 246, .15);
+}
+.field.invalid input, .field.invalid select { border-color: #EF4444; box-shadow: 0 0 0 4px rgba(239, 68, 68, .15) }
+.field .err { display: none; font-size: 12px; color: #EF4444; font-weight: 600 }
+.field.invalid .err { display: block }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px }
+.form-foot { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-top: 6px; flex-wrap: wrap }
+.form-foot .micro { font-size: 12px; color: var(--muted) }
+.form-foot .micro strong { color: var(--ink) }
+.form-success {
+  display: none; padding: 14px 16px; border-radius: 14px;
+  background: rgba(20, 184, 166, .12); border: 1px solid rgba(20, 184, 166, .35);
+  color: #0F766E; font-weight: 600; font-size: 14px;
+}
+.form-success.show { display: block; animation: fadeUp .5s ease both }
+
+@media (max-width: 480px) {
+  .field-row { grid-template-columns: 1fr }
+}

@@ -1,0 +1,26 @@
+.steps {
+  position: relative;
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+.steps::before {
+  content: "";
+  position: absolute; top: 34px; left: 8%; right: 8%; height: 2px;
+  background: repeating-linear-gradient(90deg, rgba(139, 92, 246, .35) 0 8px, transparent 8px 16px);
+  z-index: 0;
+}
+.step { position: relative; z-index: 1; padding: 28px; display: flex; flex-direction: column; gap: 10px; align-items: flex-start }
+.step-num {
+  width: 46px; height: 46px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: linear-gradient(135deg, var(--violet), var(--pink));
+  color: #fff; font-weight: 900; font-size: 18px;
+  box-shadow: 0 10px 24px rgba(139, 92, 246, .35);
+}
+.step h3 { font-size: 18px; letter-spacing: -.01em }
+.step p { font-size: 14.5px; color: var(--body) }
+
+@media (max-width: 880px) {
+  .steps { grid-template-columns: 1fr; gap: 14px }
+  .steps::before { display: none }
+}

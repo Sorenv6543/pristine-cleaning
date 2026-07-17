@@ -1,0 +1,17 @@
+.phone-card {
+  display: inline-flex; align-items: center; gap: 14px;
+  padding: 16px 22px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, .55);
+  -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, .7);
+  box-shadow: 0 10px 24px rgba(139, 92, 246, .18);
+}
+.phone-card .pc-ico {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--teal), var(--teal-hi));
+  color: #fff; display: grid; place-items: center;
+}
+.phone-card .pc-ico svg { width: 20px; height: 20px }
+.phone-card .pc-label { font-size: 11px; color: var(--muted); letter-spacing: .18em; text-transform: uppercase; font-weight: 700 }
+.phone-card .pc-num { font-size: 22px; font-weight: 900; color: var(--ink); letter-spacing: -.01em; display: block; line-height: 1.1 }

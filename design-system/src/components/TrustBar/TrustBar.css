@@ -1,0 +1,23 @@
+.trust { padding: 40px 0 20px; position: relative }
+.trust-row {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+}
+.trust-card {
+  padding: 22px 22px;
+  display: flex; flex-direction: column; gap: 6px;
+  text-align: left;
+}
+.trust-num {
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 900; color: var(--ink); letter-spacing: -.03em;
+  line-height: 1;
+}
+.trust-num .accent { color: var(--rose) }
+.trust-label { font-size: 13px; color: var(--body); font-weight: 500 }
+
+@media (max-width: 880px) {
+  .trust-row { grid-template-columns: repeat(2, 1fr) }
+}
+@media (max-width: 480px) {
+  .trust-row { grid-template-columns: 1fr 1fr; gap: 12px }
+}

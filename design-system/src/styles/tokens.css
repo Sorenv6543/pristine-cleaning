@@ -1,0 +1,28 @@
+:root {
+  --bg: #F2F0F7;
+  --violet: #8B5CF6;
+  --purple: #C084FC;
+  --pink: #F0ABFC;
+  --rose: #F472B6;
+  --teal: #14B8A6;
+  --teal-hi: #2DD4BF;
+  --ink: #1C1B22;
+  --body: #374151;
+  --muted: #6B7280;
+  --white: #ffffff;
+
+  --glass-bg: rgba(255, 255, 255, .18);
+  --glass-bg-hi: rgba(255, 255, 255, .30);
+  --glass-stroke: rgba(255, 255, 255, .30);
+  --glass-shadow: 0 8px 32px rgba(139, 92, 246, .12);
+  --glass-shadow-hi: 0 24px 60px rgba(139, 92, 246, .22);
+
+  --radius-card: 20px;
+  --radius-pill: 999px;
+
+  --maxw: 1240px;
+  --pad-x: clamp(20px, 4vw, 40px);
+
+  --t-fast: .2s ease;
+  --t-med: .35s cubic-bezier(.2, .7, .2, 1);
+}

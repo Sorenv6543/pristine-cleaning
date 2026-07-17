@@ -1,0 +1,48 @@
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 12px 22px;
+  border-radius: var(--radius-pill);
+  font-weight: 700; font-size: 14px; letter-spacing: .01em;
+  white-space: nowrap;
+  transition: transform var(--t-fast), background var(--t-fast), box-shadow var(--t-med), color var(--t-fast);
+  will-change: transform;
+}
+.btn-teal {
+  background: var(--teal); color: #fff;
+  box-shadow: 0 6px 18px rgba(20, 184, 166, .35);
+}
+.btn-teal:hover { background: var(--teal-hi); transform: translateY(-1px); box-shadow: 0 10px 24px rgba(20, 184, 166, .45) }
+.btn-teal:active { transform: translateY(0) }
+.btn-outline-white {
+  border: 1.5px solid rgba(255, 255, 255, .85);
+  background: transparent; color: var(--ink);
+}
+.nav.scrolled .btn-outline-white { border-color: rgba(28, 27, 34, .25) }
+.btn-outline-white:hover { background: rgba(255, 255, 255, .4) }
+.btn-ghost {
+  background: transparent; color: var(--ink);
+  border: 1.5px solid rgba(28, 27, 34, .18);
+}
+.btn-ghost:hover { background: rgba(255, 255, 255, .5); border-color: rgba(28, 27, 34, .3) }
+.btn-lg { padding: 16px 28px; font-size: 15px }
+
+.cta-pulse { position: relative }
+.cta-pulse::after {
+  content: "";
+  position: absolute; inset: 0; border-radius: var(--radius-pill);
+  box-shadow: 0 0 0 0 rgba(20, 184, 166, .55);
+  animation: pulseRing 2.4s cubic-bezier(.66, 0, .34, 1) infinite;
+  pointer-events: none;
+}
+@keyframes pulseRing {
+  0% { box-shadow: 0 0 0 0 rgba(20, 184, 166, .55) }
+  70% { box-shadow: 0 0 0 18px rgba(20, 184, 166, 0) }
+  100% { box-shadow: 0 0 0 0 rgba(20, 184, 166, 0) }
+}
+.cta-pulse.btn-teal:hover { animation: microBounce .6s ease }
+@keyframes microBounce {
+  0% { transform: translateY(-1px) }
+  35% { transform: translateY(-4px) }
+  70% { transform: translateY(0) }
+  100% { transform: translateY(-1px) }
+}

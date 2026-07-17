@@ -1,0 +1,33 @@
+.about-grid {
+  display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: 48px; align-items: center;
+}
+.diff-card { padding: 34px }
+.diff-card h3 { font-size: 24px; margin-bottom: 18px }
+.diff-list { display: grid; gap: 14px; margin: 0; padding: 0; list-style: none }
+.diff-list li {
+  display: flex; align-items: flex-start; gap: 12px;
+  font-size: 15.5px; color: var(--ink); font-weight: 500;
+}
+.diff-list .check {
+  width: 28px; height: 28px; flex: 0 0 auto; border-radius: 50%;
+  background: linear-gradient(135deg, var(--teal), var(--teal-hi));
+  display: grid; place-items: center; color: #fff;
+  box-shadow: 0 6px 14px rgba(20, 184, 166, .35);
+}
+.diff-list .check svg { width: 14px; height: 14px }
+.about-copy h2 { margin-bottom: 18px }
+.about-copy p { font-size: 16px; color: var(--body); margin-bottom: 14px }
+.about-copy .sig {
+  display: flex; align-items: center; gap: 14px; margin-top: 24px;
+  font-size: 14px; color: var(--muted);
+}
+.about-copy .sig .avatar {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--rose), var(--purple));
+  display: grid; place-items: center; color: #fff; font-weight: 900;
+}
+
+@media (max-width: 880px) {
+  .about-grid { grid-template-columns: 1fr; gap: 32px }
+}
